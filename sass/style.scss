@@ -1,0 +1,77 @@
+@import 'varStyle';
+
+h2{
+    text-align: center;
+    color: $h2color;
+}
+
+//GLOBAL BODY
+
+.contentBody{
+    display: grid;
+    grid-template-columns: $numColumns;
+}
+
+//HEADER ===========================================1
+
+header{
+    grid-column-start: $headWidthDivStart;   
+    grid-column-end: $headWidthDivEnd;
+
+    width: 100%;
+    height: $neutralheight;
+    background-color: $colorHead;
+}
+
+//BODY ==============================================2
+
+.divBody{
+    background-color: $colorBody;
+    height: $bodyheight;
+    width: 100%;
+    grid-column-start: $headWidthDivStart;
+    grid-column-end: $headWidthDivEnd;
+
+}
+//_________________________________________v
+h1{
+    text-align: center;
+    color: $colorText;
+    
+}
+
+.divContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: $flexSpaceAlignment;
+    justify-content: $flexSpaceAlignment;
+    flex-wrap: wrap;
+
+}
+//_________________________________________v
+.divBlock{
+    width: 100px;
+    height: $itemHeight;
+    border: $borderStyle;
+    background-color: $colorHead;
+    margin: $standartMargin;
+}
+
+//FOOTER =============================================3
+
+footer{
+    grid-column-start: $headWidthDivStart;   
+    grid-column-end: $headWidthDivEnd;
+
+    width: 100%;
+    height: $neutralheight;
+    background-color: $colorFoot;
+}
+
+
+$attr: "background";
+
+#{$container}{
+    #{attr}-color: red;
+}

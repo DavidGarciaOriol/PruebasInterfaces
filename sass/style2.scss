@@ -1,0 +1,93 @@
+@import 'aux1';
+
+body{
+
+    .container{
+        
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: $media1C;
+        justify-items: center;
+        align-items: center;
+        
+
+        .item{
+            width: 80%;
+            // background-color: $color1;
+            height: 100px;
+            margin-top: 7.5%;
+            margin-bottom: 7.5%;
+            box-sizing: border-box;
+        }
+
+        // @media(max-width: $screen1){
+            
+        //     grid-template-columns: $media2C;
+
+        //     .item{
+        //         background-color: $color2;
+        //     }
+        // }
+
+        // @media(max-width: $screen2){
+            
+        //     grid-template-columns: $media3C;
+            
+        //     .item{
+        //         background-color: $color3;
+
+        //     }
+        // }
+
+        // @media(max-width: $screen3){
+            
+        //     grid-template-columns: $media4C;
+            
+        //     .item{
+        //         background-color: $color4;
+        //     }
+        // }
+
+        @if($screen1 - $screen2 < 100){
+            background-color: rgb(106, 209, 235);
+        }@else if($screen1 - $screen2 == 100){
+            background-color: rgb(146, 231, 120);
+        }@else if($screen1 - $screen2 > 100){
+            background-color: rgb(238, 105, 105);
+        }@else{
+            background-color: rgb(115, 124, 121);
+        }
+    }   
+
+    
+}
+
+@function pow($num, $exp) {
+    $val: 1;
+  
+    @if $exp > 0 {
+      @for $count from 1 through $exp {
+        $val: $val * $num;
+      }
+    }
+  
+    @return $val;
+}
+
+
+
+@for $i from 1 through 8{
+
+    .item#{$i}{
+        border: 1px*$i solid rgb(pow(2,$i),200,0);
+    }
+
+}
+
+$lista: (img1, img2, img3, img4, img5, img6, img7, img8);
+
+@each $backimage in $lista{
+    .#{backimage}{
+        background-image: url('../src/#{$backimage}.jpg') no-repeat;
+    }
+}
